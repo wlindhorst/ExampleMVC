@@ -1,0 +1,37 @@
+﻿@model ExampleMVC.Models.UserModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            <p>Select username: @Html.TextBoxFor(x => x.Username)</p>
+            <p>Enter email: @Html.TextBoxFor(x => x.Email)</p>
+            <p>Enter phone number:@Html.TextBoxFor(x => x.Phone)</p>
+            <p>Add to mailing list?
+              @Html.DropDownListFor(x => x.MailingList, new[]
+         {
+             new SelectListItem() { Text="Yes", Value = "Yes"},
+             new SelectListItem() { Text = "No", Value = "No"}
+         }, "Choose")
+            </p>
+            <br />
+
+            <input type="submit" value="Submit" />
+        }
+
+    </div>
+
+    @Html.ActionLink("New User", "newUserForm");
+</body>
+</html>

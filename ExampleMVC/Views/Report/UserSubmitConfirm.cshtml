@@ -1,0 +1,25 @@
+﻿@model ExampleMVC.Models.UserModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div> 
+        <p>@Model.Username is registered!</p>
+        <p>@if (Model.Success) {
+        <p>Success;</p>
+        } else {
+        <p>Not success</p>
+        }
+                
+    </div>
+</body>
+</html>
